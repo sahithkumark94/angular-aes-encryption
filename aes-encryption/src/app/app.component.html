@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">AES Encryption & Decryption</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid pt-3">
+  <form [formGroup]="aesForm" (ngSubmit)="encrypt()" class=" mb-2" novalidate>
+    <label class="pt-2" for="sel1">Select:</label>
+    <select class="form-control" id="sel1" formControlName="types">
+      <option value="ENCRYPTION">ENCRYPTION</option>
+      <option value="DECRYPTION">DECRYPTION</option>
+    </select>
+    <label class="pt-2" for="input">Input Text:</label>
+    <textarea class="form-control" formControlName="plaintext" rows="5" id="comment" name="text"></textarea>
+
+    <label class="pt-2" for="output">Out Text:</label>
+    <textarea class="form-control"  rows="5" id="comment" name="text" value="{{ cipherText }}" readonly></textarea>
+
+    <div class="pt-3">
+      <button type="submit" class="btn btn-primary">Convert</button>
+  </div>
+  </form>
+  
+</div>
